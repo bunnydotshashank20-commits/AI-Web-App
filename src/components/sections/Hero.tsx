@@ -1,31 +1,33 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
-      {/* Animated gradient orbs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 hero-grid opacity-50" />
+      
+      {/* Gradient accents */}
       <motion.div 
-        className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+        className="absolute top-1/3 -left-48 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-50"
         animate={{ 
-          y: [0, -30, 0],
-          scale: [1, 1.1, 1],
+          y: [0, -20, 0],
         }}
         transition={{ 
-          duration: 8, 
+          duration: 10, 
           repeat: Infinity, 
           ease: "easeInOut" 
         }}
       />
       <motion.div 
-        className="absolute bottom-1/4 -right-32 w-96 h-96 bg-glow-secondary/20 rounded-full blur-3xl"
+        className="absolute bottom-1/3 -right-48 w-96 h-96 bg-muted rounded-full blur-3xl opacity-50"
         animate={{ 
           y: [0, 20, 0],
-          scale: [1.1, 1, 1.1],
         }}
         transition={{ 
-          duration: 10, 
+          duration: 12, 
           repeat: Infinity, 
           ease: "easeInOut" 
         }}
@@ -39,9 +41,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="w-2 h-2 rounded-full bg-accent-coral animate-pulse" />
             <span className="text-sm text-muted-foreground">AI-Powered Solutions</span>
           </motion.div>
 
@@ -53,7 +55,7 @@ const Hero = () => {
             className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6"
           >
             Transform Your Business with{" "}
-            <span className="gradient-text glow-text">Deep Data</span>
+            <span className="gradient-text">Deep Data</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -74,13 +76,17 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="glow" size="xl" className="group">
-              Start Your AI Journey
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="glow-outline" size="xl">
-              View Our Work
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="group">
+                Start Your AI Journey
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/services">
+              <Button variant="outline" size="lg">
+                View Our Work
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Stats */}
@@ -102,7 +108,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="font-heading text-3xl md:text-4xl font-bold gradient-text">
+                <div className="font-heading text-3xl md:text-4xl font-bold text-accent-coral">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>

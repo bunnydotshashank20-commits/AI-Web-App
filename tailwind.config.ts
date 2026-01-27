@@ -55,6 +55,15 @@ export default {
           primary: "hsl(var(--glow-primary))",
           secondary: "hsl(var(--glow-secondary))",
         },
+        accent: {
+          coral: "hsl(var(--accent-coral))",
+          orange: "hsl(var(--accent-orange))",
+          amber: "hsl(var(--accent-amber))",
+          pink: "hsl(var(--accent-pink))",
+          rose: "hsl(var(--accent-rose))",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

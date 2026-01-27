@@ -1,5 +1,7 @@
-import { Brain, Database, LineChart, Zap, Bot, Shield } from "lucide-react";
+import { Brain, Database, LineChart, Zap, Bot, Shield, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -48,15 +50,13 @@ const containerVariants = {
 const cardVariants = {
   hidden: { 
     opacity: 0, 
-    y: 60,
-    scale: 0.9,
+    y: 40,
   },
   visible: { 
     opacity: 1, 
     y: 0,
-    scale: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: "easeOut" as const,
     },
   },
@@ -64,11 +64,8 @@ const cardVariants = {
 
 const Services = () => {
   return (
-    <section id="services" className="py-32 relative">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
-      <div className="container relative z-10 px-6">
+    <section id="services" className="py-24 bg-secondary/30">
+      <div className="container px-6">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -77,8 +74,8 @@ const Services = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="gradient-text">Expertise</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+            Our Expertise
           </h2>
           <p className="text-lg text-muted-foreground">
             End-to-end AI solutions that transform how you work with data
@@ -91,33 +88,45 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12"
         >
           {services.map((service) => (
             <motion.div
               key={service.title}
               variants={cardVariants}
               whileHover={{ 
-                y: -8, 
-                scale: 1.02,
-                transition: { duration: 0.3 } 
+                y: -4, 
+                transition: { duration: 0.2 } 
               }}
-              className="group glass-card p-8 hover:glow-box transition-shadow duration-500"
+              className="group glass-card p-8 hover:shadow-md transition-shadow"
             >
-              <motion.div 
-                className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
-                whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
-              >
-                <service.icon className="w-7 h-7 text-primary" />
-              </motion.div>
-              <h3 className="font-heading text-xl font-semibold mb-3">
+              <div className="w-12 h-12 rounded-xl bg-accent-coral/10 flex items-center justify-center mb-6 group-hover:bg-accent-coral transition-colors">
+                <service.icon className="w-6 h-6 text-accent-coral group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-heading text-lg font-semibold mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {service.description}
               </p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center"
+        >
+          <Link to="/services">
+            <Button variant="outline" className="group">
+              View All Services
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

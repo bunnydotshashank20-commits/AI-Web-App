@@ -1,47 +1,57 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import Logo from '../../static/images/Logo.jpeg'
+import { Link, useLocation } from "react-router-dom";
+import Logo from '../../static/images/Logo.png'
+
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 font-heading text-xl font-bold">
+          <Link to="/" className="flex items-center gap-2 font-heading text-xl font-bold">
             <span>
-            Deep<span className="text-primary">Data</span>Xperts
-          </span>
+            Deep<span className="gradient-text">Data</span>Xperts
+            </span>
 
-          <img
+            <img
             src={Logo}  
             alt="DeepDataXperts Logo"
-            className="h-8 w-auto rounded-full"
+            className="h-9 w-auto rounded-full"
           />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                to={link.href}
+                className={`text-sm transition-colors ${
+                  location.pathname === link.href 
+                    ? "text-foreground font-medium" 
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <Button variant="glow" size="sm">
-              Get Started
-            </Button>
+            <Link to="/contact">
+              <Button size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -56,21 +66,27 @@ const Navbar = () => {
 
         {/* Mobile nav */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
+                  to={link.href}
+                  className={`transition-colors py-2 ${
+                    location.pathname === link.href 
+                      ? "text-foreground font-medium" 
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button variant="glow" size="sm" className="mt-2">
-                Get Started
-              </Button>
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Button size="sm" className="mt-2 w-full">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         )}
@@ -78,5 +94,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
+export default Navbar

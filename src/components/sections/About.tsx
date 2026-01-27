@@ -75,10 +75,10 @@ const About = () => {
               className="glass-card p-8 text-center hover:glow-box transition-shadow duration-500"
             >
               <motion.div 
-                className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-glow-secondary/20 flex items-center justify-center"
+                className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent-coral/20 to-accent-orange/20 flex items-center justify-center"
                 whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.3 } }}
               >
-                <value.icon className="w-8 h-8 text-primary" />
+                <value.icon className="w-8 h-8 text-accent-coral" />
               </motion.div>
               <h3 className="font-heading text-xl font-semibold mb-3">
                 {value.title}

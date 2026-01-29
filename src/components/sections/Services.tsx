@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const services = [
-  {
-    icon: Brain,
-    title: "Machine Learning",
-    description: "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
-  },
+ 
   {
     icon: Bot,
     title: "AI Agents & Automation",
@@ -34,6 +30,11 @@ const services = [
     title: "AI Security & Compliance",
     description: "Ensure your AI solutions are secure, ethical, and compliant with industry regulations and best practices.",
   },
+   {
+    icon: Brain,
+    title: "Machine Learning",
+    description: "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
+  }
 ];
 
 const containerVariants = {

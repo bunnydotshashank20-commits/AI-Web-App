@@ -33,14 +33,13 @@ const Footer = () => {
             <h4 className="font-heading font-semibold mb-4">Connect</h4>
             <div className="flex gap-3">
               {[
-                { icon: Twitter, href: "#" },
                 { icon: Linkedin, href: "#" },
-                { icon: Github, href: "#" },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
-                  href={href}
+                  // href={href}
                   className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
+                
                 >
                   <Icon className="w-4 h-4" />
                 </a>

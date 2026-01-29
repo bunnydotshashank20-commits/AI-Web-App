@@ -48,8 +48,8 @@ const Contact = () => {
               <div className="space-y-6">
                 {[
                   { icon: Mail, label: "ak@deepdataxperts.com" },
-                  { icon: Phone, label: "+1 (555) 123-4567" },
-                  { icon: MapPin, label: "Washington DC, United States" },
+                  { icon: Phone, label: "+1 833-553-2700" },
+                  { icon: MapPin, label: "Sterling, VA, United States" },
                 ].map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">

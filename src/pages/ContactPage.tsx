@@ -29,8 +29,8 @@ const ContactPage = () => {
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "ak@deepdataxperts.com" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-    { icon: MapPin, label: "Location", value: "Washington DC, United States" },
+    { icon: Phone, label: "Phone", value: "+1 833-553-2700" },
+    { icon: MapPin, label: "Location", value: "Sterling, VA, United States" },
     { icon: Clock, label: "Hours", value: "Mon-Fri 9AM-6PM" },
   ];
 

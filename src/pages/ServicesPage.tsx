@@ -7,12 +7,6 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    icon: Brain,
-    title: "Machine Learning",
-    description: "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
-    features: ["Custom model development", "Model optimization", "Transfer learning", "AutoML solutions"],
-  },
-  {
     icon: Bot,
     title: "AI Agents & Automation",
     description: "Intelligent agents that automate complex workflows, handle customer interactions, and streamline operations 24/7.",
@@ -42,6 +36,12 @@ const services = [
     description: "Ensure your AI solutions are secure, ethical, and compliant with industry regulations and best practices.",
     features: ["Bias detection", "Model auditing", "GDPR compliance", "Ethical AI"],
   },
+    {
+    icon: Brain,
+    title: "Machine Learning",
+    description: "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
+    features: ["Custom model development", "Model optimization", "Transfer learning", "AutoML solutions"],
+  }
 ];
 
 const ServicesPage = () => {

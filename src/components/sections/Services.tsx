@@ -299,7 +299,7 @@ const Services = () => {
               {/* Replace the placeholder image with your own image later */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-[520px] w-full">
                 <img
-                  src="/src/static/images/about.jpg"
+                  src="/images/about.jpg"
                   alt="About placeholder"
                   className="w-full h-64 sm:h-80 md:h-96 object-cover"
                 />
@@ -346,7 +346,7 @@ const Services = () => {
             <div className="flex justify-center lg:justify-start">
               <div className="rounded-2xl overflow-hidden shadow-lg max-w-[520px] w-full">
                 <img
-                  src="/src/static/images/careers.jpg"
+                  src="/images/careers.jpg"
                   alt="Careers placeholder"
                   className="w-full h-64 sm:h-80 md:h-96 object-cover"
                 />

@@ -168,7 +168,7 @@ const ServicesPage = () => {
                   <div className="relative">
                     <div className="rounded-2xl overflow-hidden shadow-lg">
                       <img
-                        src={`/src/static/images/service-${index + 1}.jpg`}
+                        src={`/images/service-${index + 1}.jpg`}
                         alt={service.title}
                         className="w-full h-96 object-cover"
                       />

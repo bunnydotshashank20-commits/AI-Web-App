@@ -108,7 +108,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="font-heading text-3xl md:text-4xl font-bold text-accent-coral">
+                <div className="font-heading text-3xl md:text-4xl font-bold gradient-text">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>

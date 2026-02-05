@@ -1,7 +1,16 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Brain, Database, LineChart, Zap, Bot, Shield, ArrowRight, CheckCircle } from "lucide-react";
+import {
+  Brain,
+  Database,
+  LineChart,
+  Zap,
+  Bot,
+  Shield,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -9,48 +18,84 @@ const services = [
   {
     icon: Bot,
     title: "AI Agents & Automation",
-    description: "Intelligent agents that automate complex workflows, handle customer interactions, and streamline operations 24/7.",
-    features: ["Conversational AI", "Process automation", "Intelligent routing", "24/7 availability"],
+    description:
+      "Intelligent agents that automate complex workflows, handle customer interactions, and streamline operations 24/7.",
+    features: [
+      "Conversational AI",
+      "Process automation",
+      "Intelligent routing",
+      "24/7 availability",
+    ],
   },
   {
     icon: Database,
     title: "Data Engineering",
-    description: "Build robust data pipelines and infrastructure that transform raw data into actionable insights at scale.",
-    features: ["ETL pipelines", "Data warehousing", "Real-time streaming", "Data governance"],
+    description:
+      "Build robust data pipelines and infrastructure that transform raw data into actionable insights at scale.",
+    features: [
+      "ETL pipelines",
+      "Data warehousing",
+      "Real-time streaming",
+      "Data governance",
+    ],
   },
   {
     icon: LineChart,
     title: "Predictive Analytics",
-    description: "Forecast trends, identify patterns, and make data-driven decisions with advanced statistical modeling.",
-    features: ["Demand forecasting", "Risk analysis", "Customer behavior", "Market trends"],
+    description:
+      "Forecast trends, identify patterns, and make data-driven decisions with advanced statistical modeling.",
+    features: [
+      "Demand forecasting",
+      "Risk analysis",
+      "Customer behavior",
+      "Market trends",
+    ],
   },
   {
     icon: Zap,
     title: "LLM Integration",
-    description: "Harness the power of large language models. Custom fine-tuning, RAG systems, and seamless API integrations.",
-    features: ["Custom fine-tuning", "RAG systems", "Prompt engineering", "API integration"],
+    description:
+      "Harness the power of large language models. Custom fine-tuning, RAG systems, and seamless API integrations.",
+    features: [
+      "Custom fine-tuning",
+      "RAG systems",
+      "Prompt engineering",
+      "API integration",
+    ],
   },
   {
     icon: Shield,
     title: "AI Security & Compliance",
-    description: "Ensure your AI solutions are secure, ethical, and compliant with industry regulations and best practices.",
-    features: ["Bias detection", "Model auditing", "GDPR compliance", "Ethical AI"],
+    description:
+      "Ensure your AI solutions are secure, ethical, and compliant with industry regulations and best practices.",
+    features: [
+      "Bias detection",
+      "Model auditing",
+      "GDPR compliance",
+      "Ethical AI",
+    ],
   },
-    {
+  {
     icon: Brain,
     title: "Machine Learning",
-    description: "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
-    features: ["Custom model development", "Model optimization", "Transfer learning", "AutoML solutions"],
-  }
+    description:
+      "Custom ML models tailored to your business needs. From prediction to classification, we build solutions that learn and adapt.",
+    features: [
+      "Custom model development",
+      "Model optimization",
+      "Transfer learning",
+      "AutoML solutions",
+    ],
+  },
 ];
 
 const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 relative overflow-hidden">
+        <section className="py-20 relative overflow-hidden bg-black">
           <div className="container px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -58,68 +103,93 @@ const ServicesPage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-                Our <span className="gradient-text">Services</span>
+              <div className="inline-flex items-center gap-2 bg-[#0f4f47]/30 border border-[#1F514C] rounded-full px-4 py-2 mb-6">
+                <div className="w-2 h-2 rounded-full bg-[#1F514C]"></div>
+                <span className="text-sm text-[#eefffd] font-medium">
+                  Comprehensive AI Solutions
+                </span>
+              </div>
+              <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">
+                Our Services
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                End-to-end AI solutions that transform how you work with data. From concept 
-                to production, we're with you every step of the way.
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+                End-to-end AI solutions that transform how you work with data.
+                From concept to production, we're with you every step of the
+                way.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 bg-secondary/30">
+        {/* Services Grid -  Layout */}
+        <section className="py-20">
           <div className="container px-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.1 },
-                },
-              }}
-              className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-            >
-              {services.map((service) => (
-                <motion.div
-                  key={service.title}
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                  }}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="glass-card p-8 hover:shadow-md transition-shadow"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-accent-coral/10 flex items-center justify-center mb-6 group-hover:bg-accent-coral transition-colors">
-                    <service.icon className="w-6 h-6 text-accent-coral group-hover:text-white transition-colors" />
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className={`mb-20 flex flex-col ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center gap-12`}
+              >
+                {/* Text Content */}
+                <div className="flex-1">
+                  <div className="w-12 h-12 rounded-xl bg-[#1F514C]/10 flex items-center justify-center mb-6">
+                    <service.icon className="w-6 h-6 text-[#1F514C]" />
                   </div>
-                  <h3 className="font-heading text-xl font-semibold mb-3">
+                  <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 mb-8">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-foreground" />
-                        {feature}
+                      <li
+                        key={feature}
+                        className="flex items-center gap-3 text-base"
+                      >
+                        <CheckCircle className="w-5 h-5 text-[#1F514C] flex-shrink-0" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              ))}
-            </motion.div>
+                  <Button className="bg-[#0f4f47] text-white hover:bg-[#154f47] group">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+
+                {/* Image Content */}
+                <div className="flex-1">
+                  <div className="relative">
+                    <div className="rounded-2xl overflow-hidden shadow-lg">
+                      <img
+                        src={`/src/static/images/service-${index + 1}.jpg`}
+                        alt={service.title}
+                        className="w-full h-96 object-cover"
+                      />
+                    </div>
+                    {/* Decorative accent */}
+                    <div
+                      className={`absolute ${
+                        index % 2 === 0
+                          ? "-bottom-6 -right-6"
+                          : "-bottom-6 -left-6"
+                      } w-24 h-24 bg-[#1F514C]/10 rounded-lg`}
+                    ></div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
         {/* Process Section */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="container px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -139,10 +209,26 @@ const ServicesPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-4 gap-8">
                 {[
-                  { step: "01", title: "Discover", desc: "Understand your challenges and goals" },
-                  { step: "02", title: "Design", desc: "Architect the optimal solution" },
-                  { step: "03", title: "Develop", desc: "Build and iterate rapidly" },
-                  { step: "04", title: "Deploy", desc: "Launch and monitor performance" },
+                  {
+                    step: "01",
+                    title: "Discover",
+                    desc: "Understand your challenges and goals",
+                  },
+                  {
+                    step: "02",
+                    title: "Design",
+                    desc: "Architect the optimal solution",
+                  },
+                  {
+                    step: "03",
+                    title: "Develop",
+                    desc: "Build and iterate rapidly",
+                  },
+                  {
+                    step: "04",
+                    title: "Deploy",
+                    desc: "Launch and monitor performance",
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={item.step}
@@ -152,20 +238,22 @@ const ServicesPage = () => {
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     className="text-center"
                   >
-                    <div className="font-heading text-4xl font-bold text-orange-400/80 mb-3">
+                    <div className="font-heading text-4xl font-bold text-teal-800/80 mb-3">
                       {item.step}
                     </div>
-                    <h3 className="font-heading text-lg font-semibold mb-2">{item.title}</h3>
+                    <h3 className="font-heading text-lg font-semibold mb-2">
+                      {item.title}
+                    </h3>
                     <p className="text-sm text-muted-foreground">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
-        <section className="py-20 bg-secondary/30">
+        {/* <section className="py-20 bg-secondary/30">
           <div className="container px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -189,7 +277,7 @@ const ServicesPage = () => {
               </Link>
             </motion.div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>

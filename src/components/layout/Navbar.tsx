@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from '../../static/images/Logo.png'
+import Logo from "../../static/images/Logo.svg";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -20,16 +20,19 @@ const Navbar = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-heading text-xl font-bold">
+          <Link
+            to="/"
+            className="flex items-center gap-2 font-heading text-xl font-bold"
+          >
             <span>
-            Deep<span className="gradient-text">Data</span>Xperts
+              Deep<span className="gradient-text">Data</span>Xperts
             </span>
 
             <img
-            src={Logo}  
-            alt="DeepDataXperts Logo"
-            className="h-9 w-auto rounded-full"
-          />
+              src={Logo}
+              alt="DeepDataXperts Logo"
+              className="h-8 w-auto rounded-full"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -39,8 +42,8 @@ const Navbar = () => {
                 key={link.href}
                 to={link.href}
                 className={`text-sm transition-colors ${
-                  location.pathname === link.href 
-                    ? "text-foreground font-medium" 
+                  location.pathname === link.href
+                    ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -48,9 +51,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to="/contact">
-              <Button size="sm">
-                Get Started
-              </Button>
+              <Button size="sm">Get Started</Button>
             </Link>
           </div>
 
@@ -73,8 +74,8 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href}
                   className={`transition-colors py-2 ${
-                    location.pathname === link.href 
-                      ? "text-foreground font-medium" 
+                    location.pathname === link.href
+                      ? "text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -94,4 +95,4 @@ const Navbar = () => {
     </nav>
   );
 };
-export default Navbar
+export default Navbar;

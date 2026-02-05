@@ -85,12 +85,15 @@ const Footer = () => {
             <div className="md:col-span-2 text-white">
               <div className="flex items-start gap-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold leading-tight">
-                  Deep Data — Your source for smart automations.
+                  Deep Data - Your source for smart automations.
                 </h2>
                 <button
                   aria-label="Back to top"
                   title="Back to top"
-                  className="ml-auto bg-black/20 rounded p-2 text-sm hidden md:inline-flex"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  className="ml-auto bg-black/20 hover:bg-black/40 rounded p-2 text-sm hidden md:inline-flex transition-colors cursor-pointer"
                 >
                   ↑
                 </button>

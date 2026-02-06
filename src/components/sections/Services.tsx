@@ -266,7 +266,7 @@ const Services = () => {
       {/* About Section */}
       <section className="py-20">
         <div className="container px-6">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-2">
               <h3 className="font-heading text-3xl font-bold mb-4">
                 About DeepDataXperts
@@ -286,10 +286,7 @@ const Services = () => {
               </p>
 
               <Link to="/about">
-                <Button
-                  variant="glow"
-                  className="mt-2 bg-[#0f4f47] text-white hover:bg-[#154f47] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0f4f47]/60"
-                >
+                <Button className="mt-2 bg-[#0f4f47] text-white">
                   Learn More About Us
                 </Button>
               </Link>
@@ -313,7 +310,7 @@ const Services = () => {
       {/* Careers Section */}
       <section className="py-20">
         <div className="container px-6">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="lg:pr-12">
               <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
                 Careers at DeepDataXperts
@@ -334,10 +331,7 @@ const Services = () => {
               </ul>
 
               <Link to="/careers">
-                <Button
-                  variant="glow"
-                  className="mt-2 bg-[#0f4f47] text-white hover:bg-[#154f47] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0f4f47]/60"
-                >
+                <Button className="mt-2 bg-[#0f4f47] text-white hover:bg-[#154f47] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0f4f47]/60">
                   View Open Roles
                 </Button>
               </Link>
@@ -357,9 +351,9 @@ const Services = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20">
         <div className="container px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Left - Info */}
               <motion.div

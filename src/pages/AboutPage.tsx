@@ -53,7 +53,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden bg-black">
           <div className="container px-6">

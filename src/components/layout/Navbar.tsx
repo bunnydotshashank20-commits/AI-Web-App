@@ -28,11 +28,7 @@ const Navbar = () => {
               Deep<span className="gradient-text">Data</span>Xperts
             </span>
 
-            <img
-              src={Logo}
-              alt="DeepDataXperts Logo"
-              className="h-8 w-auto rounded-full"
-            />
+            <img src={Logo} alt="DeepDataXperts Logo" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop nav */}

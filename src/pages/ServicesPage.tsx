@@ -51,18 +51,18 @@ const services = [
       "Market trends",
     ],
   },
-  {
-    icon: Zap,
-    title: "LLM Integration",
-    description:
-      "Harness the power of large language models. Custom fine-tuning, RAG systems, and seamless API integrations.",
-    features: [
-      "Custom fine-tuning",
-      "RAG systems",
-      "Prompt engineering",
-      "API integration",
-    ],
-  },
+  // {
+  //   icon: Zap,
+  //   title: "LLM Integration",
+  //   description:
+  //     "Harness the power of large language models. Custom fine-tuning, RAG systems, and seamless API integrations.",
+  //   features: [
+  //     "Custom fine-tuning",
+  //     "RAG systems",
+  //     "Prompt engineering",
+  //     "API integration",
+  //   ],
+  // },
   {
     icon: Shield,
     title: "AI Security & Compliance",
@@ -93,7 +93,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden bg-black">
           <div className="container px-6">
@@ -124,67 +124,70 @@ const ServicesPage = () => {
         {/* Services Grid -  Layout */}
         <section className="py-20">
           <div className="container px-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className={`mb-20 flex flex-col ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-12`}
-              >
-                {/* Text Content */}
-                <div className="flex-1">
-                  <div className="w-12 h-12 rounded-xl bg-[#1F514C]/10 flex items-center justify-center mb-6">
-                    <service.icon className="w-6 h-6 text-[#1F514C]" />
-                  </div>
-                  <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-center gap-3 text-base"
-                      >
-                        <CheckCircle className="w-5 h-5 text-[#1F514C] flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="bg-[#0f4f47] text-white hover:bg-[#154f47] group">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-
-                {/* Image Content */}
-                <div className="flex-1">
-                  <div className="relative">
-                    <div className="rounded-2xl overflow-hidden shadow-lg">
-                      <img
-                        src={`/images/service-${index + 1}.jpg`}
-                        alt={service.title}
-                        className="w-full h-96 object-cover"
-                      />
+            <div className="max-w-6xl mx-auto">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className={`mb-20 flex flex-col ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-12 lg:gap-16`}
+                >
+                  {/* Text Content */}
+                  <div className="flex-1">
+                    <div className="w-12 h-12 rounded-xl bg-[#1F514C]/10 flex items-center justify-center mb-6">
+                      <service.icon className="w-6 h-6 text-[#1F514C]" />
                     </div>
-                    {/* Decorative accent */}
-                    <div
-                      className={`absolute ${
-                        index % 2 === 0
-                          ? "-bottom-6 -right-6"
-                          : "-bottom-6 -left-6"
-                      } w-24 h-24 bg-[#1F514C]/10 rounded-lg`}
-                    ></div>
+                    <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-center gap-3 text-base"
+                        >
+                          <CheckCircle className="w-5 h-5 text-[#1F514C] flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button className="bg-[#0f4f47] text-white hover:bg-[#154f47] group">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Image Content */}
+                  <div className="flex-1 flex justify-center">
+                    <div className="relative w-full max-w-[520px]">
+                      {/* Decorative accent - behind image, slightly peeking */}
+                      <div
+                        className={`absolute ${
+                          index % 2 === 0
+                            ? "-bottom-6 -right-6"
+                            : "-bottom-6 -left-6"
+                        } w-36 h-28 bg-[#1F514C]/80 rounded-lg z-0`}
+                      ></div>
+
+                      <div className="rounded-2xl overflow-hidden shadow-lg relative z-10">
+                        <img
+                          src={`/images/service-${index + 1}.jpg`}
+                          alt={service.title}
+                          className="w-full h-64 sm:h-80 md:h-96 lg:h-[420px] object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

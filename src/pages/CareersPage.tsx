@@ -60,7 +60,7 @@ const CareersPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden bg-black">
           <div className="container px-6">
@@ -160,64 +160,53 @@ const CareersPage = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.1 },
-                },
-              }}
-              className="max-w-3xl mx-auto space-y-4"
-            >
-              {openPositions.map((position) => (
-                <motion.div
-                  key={position.title}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.5 },
-                    },
-                  }}
-                  whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                  className="glass-card p-6 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="font-heading text-lg font-semibold mb-2">
-                        {position.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        {position.description}
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Briefcase className="w-4 h-4" />
-                          {position.department}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {position.location}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {position.type}
-                        </span>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {openPositions.map((position) => (
+                  <motion.div
+                    key={position.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45 }}
+                    whileHover={{ translateY: -6 }}
+                    className="bg-white dark:bg-[#0b0b0b] rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="font-heading text-lg font-semibold mb-2">
+                          {position.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          {position.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          <span className="text-xs bg-[#EAF6EF] text-[#0f4f47] px-2 py-1 rounded-full">
+                            {position.location}
+                          </span>
+                          <span className="text-xs bg-[#EAF6EF] text-[#0f4f47] px-2 py-1 rounded-full">
+                            {position.type}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col items-start md:items-end gap-3">
+                        {/* <a
+                          href="#"
+                          className="text-sm text-[#0f4f47] hover:underline"
+                        >
+                          Apply
+                        </a> */}
+                        <Button size="sm" className="hidden md:inline-flex">
+                          Apply Now
+                        </Button>
                       </div>
                     </div>
-                    <Button className="group shrink-0">
-                      Apply Now
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
